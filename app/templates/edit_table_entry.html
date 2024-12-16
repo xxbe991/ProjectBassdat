@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Edit Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">EXAMPLE</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Navigation items can be added here -->
+          </div>
+        </div>
+      </nav>
+    </header>
+    
+    <main>
+      <div class="container mt-5">
+        <h1 class="text-center text-primary mb-4">Edit Data</h1>
+        
+        <form method="POST">
+          {% if table_name == 'Mobil' %}
+            <h3>Edit Mobil</h3>
+            <div class="mb-3">
+              <label for="plat_nomor" class="form-label">Plat Nomor</label>
+              <input type="text" class="form-control" id="plat_nomor" name="plat_nomor" value="{{ data.plat_nomor }}" required>
+              
+              <label for="merk" class="form-label">Merk</label>
+              <input type="text" class="form-control" id="merk" name="merk" value="{{ data.merk }}" required>
+              
+              <label for="model" class="form-label">Model</label>
+              <input type="text" class="form-control" id="model" name="model" value="{{ data.model }}" required>
+              
+              <label for="harga_sewa" class="form-label">Harga Sewa</label>
+              <input type="number" class="form-control" id="harga_sewa" name="harga_sewa" value="{{ data.harga_sewa }}" required>
+              
+              <label for="tahun_keluar" class="form-label">Tahun Keluar</label>
+              <input type="number" class="form-control" id="tahun_keluar" name="tahun_keluar" value="{{ data.tahun_keluar }}" required>
+              
+              <label for="tempat_duduk" class="form-label">Tempat Duduk</label>
+              <input type="number" class="form-control" id="tempat_duduk" name="tempat_duduk" value="{{ data.tempat_duduk }}" required>
+              
+              <label for="status_rental" class="form-label">Status Rental</label>
+              <input type="text" class="form-control" id="status_rental" name="status_rental" value="{{ data.status_rental }}" required>
+            </div>
+          {% elif table_name == 'Pelanggan' %}
+            <h3>Edit Pelanggan</h3>
+            <div class="mb-3">
+              <label for="id_pelanggan" class="form-label">ID Pelanggan</label>
+              <input type="text" class="form-control" id="id_pelanggan" name="id_pelanggan" value="{{ data.id_pelanggan }}" required>
+              
+              <label for="nama_pelanggan" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="nama_pelanggan" name="nama_pelanggan" value="{{ data.nama_pelanggan }}" required>
+              
+              <label for="NIK" class="form-label">NIK</label>
+              <input type="number" class="form-control" id="NIK" name="NIK" value="{{ data.NIK }}" required>
+              
+              <label for="alamat_pelanggan" class="form-label">Alamat</label>
+              <input type="text" class="form-control" id="alamat_pelanggan" name="alamat_pelanggan" value="{{ data.alamat_pelanggan }}" required>
+              
+              <label for="no_telepon" class="form-label">No Telepon</label>
+              <input type="text" class="form-control" id="no_telepon" name="no_telepon" value="{{ data.no_telepon }}" required>
+              
+              <label for="email_pelanggan" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email_pelanggan" name="email_pelanggan" value="{{ data.email_pelanggan }}" required>
+              
+              <label for="pekerjaan" class="form-label">Pekerjaan</label>
+              <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" value="{{ data.pekerjaan }}" required>
+            </div>
+          {% elif table_name == 'Karyawan' %}
+            <h3>Edit Karyawan</h3>
+            <div class="mb-3">
+              <label for="id_karyawan" class="form-label">ID Karyawan</label>
+              <input type="text" class="form-control" id="id_karyawan" name="id_karyawan" value="{{ data.id_karyawan }}" required>
+              
+              <label for="nama_karyawan" class="form-label">Nama</label>
+              <input type="text" class="form-control" id="nama_karyawan" name="nama_karyawan" value="{{ data.nama_karyawan }}" required>
+              
+              <label for="NIK_karyawan" class="form-label">NIK</label>
+              <input type="number" class="form-control" id="NIK_karyawan" name="NIK_karyawan" value="{{ data.NIK_karyawan }}" required>
+              
+              <label for="no_telepon_karyawan" class="form-label">No Telepon</label>
+              <input type="text" class="form-control" id="no_telepon_karyawan" name="no_telepon_karyawan" value="{{ data.no_telepon_karyawan }}" required>
+              
+              <label for="no_rekening" class="form-label">No Rekening</label>
+              <input type="number" class="form-control" id="no_rekening" name="no_rekening" value="{{ data.no_rekening }}" required>
+              
+              <label for="gaji" class="form-label">Gaji</label>
+              <input type="number" class="form-control" id="gaji" name="gaji" value="{{ data.gaji }}" required>
+              
+              <label for="email_karyawan" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email_karyawan" name="email_karyawan" value="{{ data.email_karyawan }}" required>
+              
+              <label for="alamat_karyawan" class="form-label">Alamat</label>
+              <input type="text" class="form-control" id="alamat_karyawan" name="alamat_karyawan" value="{{ data.alamat_karyawan }}" required>
+              
+              <label for="jabatan" class="form-label">Jabatan</label>
+              <input type="text" class="form-control" id="jabatan" name="jabatan" value="{{ data.jabatan }}" required>
+            </div>
+          {% endif %}
+
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
+      </div>
+    </main>
+    
+    <footer class="bg-primary text-light text-center p-3 mt-5 shadow-sm">
+      <p>&copy; 2024 Example</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
